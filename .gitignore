@@ -1,0 +1,8 @@
+steam_appid.txt
+libsteam_api.so
+
+# This is the developer's ignore files
+# Feel free to ignore them
+.ycm_extra_conf.py
+*.bak
+builds/
