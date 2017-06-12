@@ -1,18 +1,16 @@
 cmake_minimum_required(VERSION 3.0)
 project(SteamWorkshopUploader)
 
-if(NOT CMAKE_BUILD_TYPE)
-    # Default to a debug build type for ease
-    set(CMAKE_BUILD_TYPE Debug)
-endif()
-
 include_directories("${STEAM_INCLUDE}")
+message(STATUS ${STEAM_INCLUDE})
 
 set(CMAKE_CXX_FLAGS_DEBUG -DDEBUG)
 
 add_library(steam_api SHARED IMPORTED)
 set_target_properties(steam_api PROPERTIES BUILD_WITH_INSTALL_RPATH
     TRUE IMPORTED_LOCATION libsteam_api.so)
+#set_target_properties(steam_api PROPERTIES BUILD_WITH_INSTALL_RPATH
+#    TRUE IMPORTED_LOCATION steam_api.dll)
 cmake_policy(SET CMP0015 NEW)
 link_directories(.)
 
